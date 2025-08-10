@@ -48,7 +48,7 @@ public class DonDatPhong
     }
 
     public int getTongTien() {
-        return phong.getGia() * soDemO;
+        return phong.getGia() * soDemO + (soDemO * 50000);
     }
 
     public void setTongTien(int tongTien) {
