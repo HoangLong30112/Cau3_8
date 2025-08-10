@@ -1,14 +1,24 @@
 package OOP;
 
+import java.util.ArrayList;
+
 class Cau2_8{
     public static class Main {
         public static void main(String[] args) {
-            KhachHang kh1 = new KhachHang("KH01", "Nguyễn Văn A", "0912345678");
-            Phong p1 = new Phong("P101", "VIP", 500000);
+            // Danh sách phòng
+            ArrayList<Phong> dsPhong = new ArrayList<>();
+            dsPhong.add(new Phong("P101", "Deluxe", 800000));
+            dsPhong.add(new Phong("P102", "Standard", 500000));
 
-            DonDatPhong booking = new DonDatPhong("DP01", kh1, p1, 3);
-            booking.datPhong(p1, kh1); // 3 đêm ở
+            // Danh sách khách hàng
+            ArrayList<KhachHang> dsKhach = new ArrayList<>();
+            dsKhach.add(new KhachHang("KH01", "Nguyen Van A", "0901234567"));
+            dsKhach.add(new KhachHang("KH02", "Tran Thi B", "0907654321"));
 
+            // Đặt phòng cho khách hàng
+            DonDatPhong booking = new DonDatPhong("DP01", dsKhach.get(0), dsPhong.get(0), 3);
+
+            // In thông tin
             System.out.println(booking);
         }
     }
